@@ -18,6 +18,9 @@ export let movieService= {
     },
     getMovieByTheater: () => {
         return https.get("api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=GP01")
+    },
+    getListBanner: () => {
+        return https.get("/api/QuanLyPhim/LayDanhSachBanner")
     }
 }
 export let adminSercice={

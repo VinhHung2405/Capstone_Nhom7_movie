@@ -33,6 +33,7 @@ export default function Header() {
             navigate("/login");
           }}
           className="btn-theme"
+          style={scrollY < 50 ? {text: '#fff'} : {backgroundColor: '#000'}}
         >
           Login
         </button>
@@ -41,6 +42,7 @@ export default function Header() {
             navigate("/register");
           }}
           className="btn-theme"
+          style={scrollY < 50 ? {text: '#fff'} : {backgroundColor: '#000'}}
         >
           Register
         </button>
@@ -60,7 +62,7 @@ export default function Header() {
     }
   }, [])
   return (
-      <Navigation className="shadow-lg z-50" style={scrollY < 50 ? {backgroundColor: '#fff'} : {backgroundColor: '#000'}}>
+      <Navigation className=" z-50" style={scrollY < 50 ? {backgroundColor: 'transparent'} : {backgroundColor: '#fff'}}>
       <div className="container flex justify-between items-center h-20">
         <span
           className="text-5xl text-red-500 cursor-pointer"
@@ -71,7 +73,7 @@ export default function Header() {
           B-Flix
         </span>
         <nav
-         className="space-x-5 text-red-600">
+         className="space-x-5 text-white">
           {renderUserNav()}
         </nav>
       </div>
