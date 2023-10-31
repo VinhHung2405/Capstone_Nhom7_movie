@@ -25,7 +25,7 @@ const Register = () => {
             });
     };
     return (
-        <div
+        <div className="mt-20"
             style={{
                 backgroundImage: `url(${bgRe})`,
                 height: '100vh',

@@ -32,7 +32,7 @@ const LoginPage = () => {
     console.log('Failed:', errorInfo);
   };
  return ( 
-    <div
+    <div className='mt-20'
       style={{
                 backgroundImage: `url(${bgLog})`,
                 height: '100vh',

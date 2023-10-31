@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-
+import { NavigationType, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 export default function Header() {
   let navigate = useNavigate(); // điều hướng trang
   let { info } = useSelector((state) => state.userReducer);
@@ -17,12 +17,12 @@ export default function Header() {
   let renderUserNav = () => {
     if (info) {
       return (
-        <>
-          <span>{info.hoTen}</span>
-          <button onClick={handleLogout} className="btn-theme">
+        <div className="mr-20">
+          <span className="mr-10">{info.hoTen}</span>
+          <button onClick={handleLogout} className="btn-theme mr-20">
             Logout
           </button>
-        </>
+        </div>
       );
     }
     
@@ -47,9 +47,21 @@ export default function Header() {
       </>
     );
   };
+  const [ scrollY, setScrollY] = useState(0);
+  const handleScrollY = () => {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    setScrollY(scrollY)
+  }
+  useEffect (() =>{
+    handleScrollY();
+    window.addEventListener("scroll", handleScrollY);
+    return() => {
+      window.removeEventListener('scroll', handleScrollY);
+    }
+  }, [])
   return (
-    <div className="shadow-lg">
-      <div className="container flex justify-between items-center  h-20">
+      <Navigation className="shadow-lg z-50" style={scrollY < 50 ? {backgroundColor: '#fff'} : {backgroundColor: '#000'}}>
+      <div className="container flex justify-between items-center h-20">
         <span
           className="text-5xl text-red-500 cursor-pointer"
           onClick={() => {
@@ -58,11 +70,18 @@ export default function Header() {
         >
           B-Flix
         </span>
-        <nav className="space-x-5">
+        <nav
+         className="space-x-5 text-red-600">
           {renderUserNav()}
         </nav>
       </div>
-    </div>
+    </Navigation>
   );
 }
 
+const Navigation = styled.div`
+  position : fixed;
+  width: 100%;
+  height: 80px;
+  transition: all .5s;
+`

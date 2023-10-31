@@ -17,7 +17,7 @@ export default function Detailpage() {
          });
     }, []);  
   return (
-    <div className='container flex justify-content items-center'>
+    <div className='container flex justify-content items-center mt-10'>
         <div className=''>
           <img className='object-cover h-70 mt-6 w-60' src={detail?.hinhAnh} alt=''></img>
           <span className='block my-2'>{detail?.ngayKhoiChieu}</span>

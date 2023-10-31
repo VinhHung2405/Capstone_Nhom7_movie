@@ -43,14 +43,20 @@ const columns = [
     dataIndex: 'action', 
     key: 'action',
     render: () => {
-      return <Button danger>Delete</Button>
+      return (
+       <div>
+        <Button className='' success>Add</Button>
+        <Button className='mx-2' danger>Delete</Button>
+        <Button info>edit</Button>
+       </div>
+      )
     }
   },
 ];
 
 
   return (
-    <div>
+    <div className='mt-20'>
       <Table dataSource={userArr} columns={columns} />
     </div>
   )

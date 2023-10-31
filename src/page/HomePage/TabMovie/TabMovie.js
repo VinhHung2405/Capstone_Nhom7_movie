@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { movieService } from "../../../service/service";
 import { ConfigProvider, Tabs } from "antd";
 import moment from "moment";
+import { NavLink } from "react-router-dom";
 const onChange = (key) => {
   console.log(key);
 };
-
 export default function TabMovie() {
   const [heThongRap, setHeThongRap] = useState([]);
   useEffect(() => {
@@ -65,9 +65,11 @@ export default function TabMovie() {
             <h3 className="font-medium">{phim.tenPhim}</h3>
             <div className="grid grid-cols-3 gap-3">
               {phim.lstLichChieuTheoPhim.slice(0, 9).map((lichChieu) => {
-                return<span className="
+                return<NavLink to={"/booking"}
+                 className="
                 rounded bg-red-600 px-2 py-1 text-white
-                ">{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}</span>
+                ">{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}
+                </NavLink>
               })}
             </div>
           </div>
