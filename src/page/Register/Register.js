@@ -35,7 +35,7 @@ const Register = () => {
             }}
         >
             <Form
-                className="container bg-white py-6 rounded-xl p-4"
+                className="container bg-white py-6 rounded-xl p-5"
                 layout="vertical"
                 form={form}
                 name="register"

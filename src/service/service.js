@@ -21,10 +21,33 @@ export let movieService= {
     },
     getListBanner: () => {
         return https.get("/api/QuanLyPhim/LayDanhSachBanner")
-    }
+    },
+    getBookingDetail: (id) => {
+        return https.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`)
+    },
+     getToPurchase: (idBooking) => {
+        return https.get(
+            `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idBooking}`
+        );
+    },
+    bookingTicket: (ticket) => {
+        return https.post("/api/QuanLyDatVe/DatVe", ticket);
+    },
+    
 }
-export let adminSercice={
-    getUserList:() => {
-        return https.get("/api/QuanLyNguoiDung/LayDanhSachNguoiDung?maNhom=GP00")
-    }
+export let adminService = {
+    getUserList: (query = '') => {
+        return https.get(`/api/QuanLyNguoiDung/LayDanhSachNguoiDung${query}`)
+    },
+    deleteUser: (taiKhoan = '') => {
+        return https.delete(`/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`)
+    },
+
+    getUserDetailById: (taiKhoan) => {
+        return https.post(`/api/QuanLyNguoiDung/LayThongTinNguoiDung?TaiKhoan=${taiKhoan}`)
+    },
+
+    updateUser: (payload) => {
+        return https.post(`/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung`, payload)
+    },
 }

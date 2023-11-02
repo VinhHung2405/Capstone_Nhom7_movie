@@ -7,9 +7,10 @@ import { Toaster } from 'react-hot-toast';
 import Detailpage from './page/Detailpage/Detailpage';
 import Layout from './layout/Layout';
 import AdminLayout from './layout/AdminLayout';
-import UserPage from './UserPage/UserPage';
-import Booking from './page/Booking/Booking';
+
+import Booking from './page/Booking/BookingDesktop';
 import Register from './page/Register/Register';
+import UserPage from './UserPage/UserPage';
 
 function App() {
   return (

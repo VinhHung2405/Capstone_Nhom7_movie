@@ -1,6 +1,8 @@
 import axios from "axios";
 import { store } from "..";
 import { useDispatch } from "react-redux";
+import { getAccessToken } from "../utils";
+
 // import { turnOffLoadingAction, turnOnLoadingAction } from "../redux/action/spinner";
 
 const TOKEN_CYBERSOFT =
@@ -10,12 +12,12 @@ export let https= axios.create({
     baseURL: "https://movienew.cybersoft.edu.vn",
     headers:{
         TokenCybersoft: TOKEN_CYBERSOFT,
+        Authorization: 'Bearer ' + getAccessToken()
     }
 })
-// let dispatch = usedispatch();(khong dung nhu nay dc)
-//dispatch ngoai component(dung store.dispatch)
 
-// axios interceptors
+
+//axios interceptors
 // https.interceptors.request.use(function (config) {
 //     console.log("api di")
 //     store.dispatch(turnOnLoadingAction());

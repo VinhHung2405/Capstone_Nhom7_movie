@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { rootReducer } from "./redux/reducer/root";
+import { StyleProvider } from '@ant-design/cssinjs';
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // tạo store
@@ -19,7 +21,10 @@ export const store = createStore(
 
 root.render(
   <Provider store={store}>
-    <App />
+    <StyleProvider hashPriority="high">
+      <App />
+    </StyleProvider>
+    
   </Provider>
 );
 

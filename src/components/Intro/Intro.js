@@ -1,66 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import { movieService } from '../../service/service';
-import { Carousel } from 'antd';
+import React from 'react'
+import { useMediaQuery } from 'react-responsive';
+import IntroDesktop from './IntroDesktop';
+import IntroMobile from './IntroMobile';
+import IntroTablet from './IntroTablet';
 
-const contentStyle = {
-  height: "700px",
-  color: "#fff",
-  backgroundPosition: "center",
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
+const Desktop = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 992 });
+    return isDesktop ? children : null;
 };
+const Tablet = ({ children }) => {
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    return isTablet ? children : null;
+};
+const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+    return isMobile ? children : null;
+};
+
 export default function Intro() {
-  const [listBanner, setBanner] = useState([]);
-  useEffect(() => {
-    movieService.getListBanner()
-     .then((res) => {
-      setBanner(res.data.content)
-        console.log(res);
-     })
-     .catch((err) => {
-          console.log(err);
-     });
-  }, [])
-  let renderBanner = () => {
-    return listBanner.map(({ hinhAnh, maBanner }) => {
-      return (
-        <div key={maBanner}>
-          <div
-            style={{
-              ...contentStyle,
-              backgroundImage: `url(${hinhAnh})`,
-              width: "100%",
-              height: "100vh",
-            }}
-          >
-            <img
-              src={hinhAnh}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </div>
-      );
-    });
-  };
   return (
-    <div
-      style={{
-        width: "100%",
-        margin: "0 auto",
-        backgroundPosition: "center",
-        objectFit: "cover",
-        backgroundImage: "url('./bgLoginPage1.jpg')",
-        backgroundSize: "cover",
-        boxShadow: " inset 0 0 0 2000px rgba(0, 0, 0, 0.7)",
-      }}
-    >
-      <Carousel style={{ margin: 0 }} effect="fade">
-        {renderBanner()}
-      </Carousel>
+    <div>
+      <Desktop>
+        <IntroDesktop/>
+      </Desktop>
+      <Mobile>
+        <IntroMobile/>
+      </Mobile>
+      <Tablet>
+        <IntroTablet/>
+      </Tablet>
     </div>
   )
 }

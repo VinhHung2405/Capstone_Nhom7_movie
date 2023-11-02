@@ -1,63 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { adminSercice } from '../service/service';
-import { Button, Table, Tag } from 'antd';
+import React from 'react'
+import UserPageTablet from './UserPageTablet';
+import UserPageMobile from './UserPageMobile';
+import UserPageDesktop from './UserPageDesktop';
+import { useMediaQuery } from 'react-responsive';
 
+const Desktop = ({ children }) => {
+    const isDesktop = useMediaQuery({ minWidth: 992 });
+    return isDesktop ? children : null;
+};
+const Tablet = ({ children }) => {
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 991 });
+    return isTablet ? children : null;
+};
+const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+    return isMobile ? children : null;
+};
 export default function UserPage() {
-  const [userArr, setUserArr] = useState([]);
-  //goi ra api lay danh sach ng dung
-  useEffect(() => {
-    adminSercice.getUserList()
-    .then((res) => {
-      setUserArr(res.data.content)
-     })
-     .catch((err) => {
-          console.log(err);
-     });
-  }, [])
-  // antd rable (dung table dau tien)
-  
-// dataIndex ~ trung voi hey cua oject trong datasource
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'hoTen',
-    key: 'name',
-  },
-  {
-    title: 'Gmail',
-    dataIndex: 'email',
-    key: 'age',
-  },
-  {
-    title: 'User Type',
-    dataIndex: 'maLoaiNguoiDung', 
-    key: 'maLoaiNguoiDung',
-    render: (text) => {
-      if (text == "KhachHang")
-      return <Tag color='green'>Khách Hàng</Tag>
-      else return <Tag color='red'>Quan Trị</Tag>
-    }
-  },
-  {
-    title: 'Action',
-    dataIndex: 'action', 
-    key: 'action',
-    render: () => {
-      return (
-       <div>
-        <Button className='' success>Add</Button>
-        <Button className='mx-2' danger>Delete</Button>
-        <Button info>edit</Button>
-       </div>
-      )
-    }
-  },
-];
-
-
-  return (
-    <div className='mt-20'>
-      <Table dataSource={userArr} columns={columns} />
-    </div>
-  )
+    return(
+        <div>
+            <Desktop>
+                <UserPageDesktop/>
+            </Desktop>
+            <Tablet>
+                <UserPageTablet/>
+            </Tablet>
+            <Mobile>
+                <UserPageMobile/>
+            </Mobile>
+        </div>
+    )
 }
