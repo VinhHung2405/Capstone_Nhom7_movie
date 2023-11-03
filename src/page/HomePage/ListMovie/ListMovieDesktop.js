@@ -3,6 +3,7 @@ import { movieService } from '../../../service/service';
 import Meta from 'antd/es/card/Meta';
 import { Card } from 'antd';
 import { NavLink, useParams } from 'react-router-dom';
+import { hover } from '@testing-library/user-event/dist/hover';
 
 export default function ListMovie() {
     const [list, setList] = useState([]);
@@ -29,7 +30,12 @@ export default function ListMovie() {
             <Meta title={tenPhim} description="www.instagram.com" />
             <NavLink className="h-10 w-ful rounded block
             leading-10 text-center mt-2 bg-red-600 text-white" 
-            to={`/detail/${maPhim}`}>Đặt Vé Ngay</NavLink>
+            to={`/detail/${maPhim}`}
+            style={{
+              color:'black',
+              backgroundColor:'red'
+            }}
+            >Đặt Vé Ngay</NavLink>
         </Card>
             )
       })

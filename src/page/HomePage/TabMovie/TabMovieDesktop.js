@@ -62,13 +62,21 @@ export default function TabMovie() {
         <div className="flex space-x-3 mb-2">
           <img className="w-20 h-32 object-cover" src={phim.hinhAnh} alt=""/>
           <div>
-            <h3 className="font-medium">{phim.tenPhim}</h3>
+            <h3 className="font-medium" style={{
+              color:'black',
+              fontSize: '18px'
+            }}>{phim.tenPhim}</h3>
             <div className="grid grid-cols-3 gap-3">
               {phim.lstLichChieuTheoPhim.slice(0, 9).map((lichChieu) => {
                 return<NavLink to={"/booking"}
                  className="
                 rounded bg-red-600 px-2 py-1 text-white
-                ">{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}
+                "
+                style={{
+                  backgroundColor: '#FF4B4B',
+                  color:"black"
+                }}
+                >{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}
                 </NavLink>
               })}
             </div>
