@@ -65,7 +65,7 @@ export default function TabMovie() {
             <h3 className="font-medium">{phim.tenPhim}</h3>
             <div className="grid grid-cols-3 gap-3">
               {phim.lstLichChieuTheoPhim.slice(0, 9).map((lichChieu) => {
-                return<NavLink to={"/booking"}
+                return<NavLink to={"/booking/:idBooking"}
                  className="
                 rounded bg-red-600 px-2 py-1 text-white
                 ">{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}

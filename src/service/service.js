@@ -11,7 +11,7 @@ export let userService={
 }
 export let movieService= {
     getList: () => {
-        return https.get("/api/QuanLyPhim/LayDanhSachPhim");
+        return https.get("/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09");
     },
     getDetail: (id) => {
         return https.get(`/api/QuanLyPhim/LayThongTinPhim?MaPhim=${id}`);
@@ -25,7 +25,7 @@ export let movieService= {
     getBookingDetail: (id) => {
         return https.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${id}`)
     },
-     getToPurchase: (idBooking) => {
+     getToBooking: (idBooking) => {
         return https.get(
             `/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=${idBooking}`
         );

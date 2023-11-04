@@ -31,8 +31,8 @@ export default function Detailpage() {
             type="circle" percent={detail?.danhGia * 10} />
             <Rate allowHalf value={detail?.danhGia} count={10} 
             className='text-red-500 block my-2 '/>
-            <NavLink className='h-10  rounded block
-            leading-10 text-center mt-5 bg-red-600 text-white' to={"/booking"}>Mua Vé</NavLink>
+            {/* <NavLink className='h-10  rounded block
+            leading-10 text-center mt-5 bg-red-600 text-white' to={"/booking"}>Mua Vé</NavLink> */}
         </div>
     </div>
   )

@@ -34,9 +34,15 @@ export default function TabMovie() {
               return {
                 key: cumRap.tenCumRap,
                 label: (
-                  <div className="text-left w-96 whitespace-normal">
-                    <p>{cumRap.tenCumRap}</p>
-                    <p>{cumRap.diaChi}</p>
+                  <div className=" tab-content text-left w-96 whitespace-normal">
+                    <p style={{
+                      color:'#fb8500',
+                      fontSize: '18px',
+                      fontWeight: '600'
+                    }}>{cumRap.tenCumRap}</p>
+                    <p style={{
+                      color: 'white'
+                    }}>{cumRap.diaChi}</p>
                   </div>
                 ),
                 children: (
@@ -63,18 +69,18 @@ export default function TabMovie() {
           <img className="w-20 h-32 object-cover" src={phim.hinhAnh} alt=""/>
           <div>
             <h3 className="font-medium" style={{
-              color:'black',
+              color:'#fb8500',
               fontSize: '18px'
             }}>{phim.tenPhim}</h3>
             <div className="grid grid-cols-3 gap-3">
               {phim.lstLichChieuTheoPhim.slice(0, 9).map((lichChieu) => {
-                return<NavLink to={"/booking"}
+                return<NavLink to={`/booking/${lichChieu.maLichChieu}`}
                  className="
                 rounded bg-red-600 px-2 py-1 text-white
                 "
                 style={{
                   backgroundColor: '#FF4B4B',
-                  color:"black"
+                  color:"white"
                 }}
                 >{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}
                 </NavLink>
@@ -87,13 +93,12 @@ export default function TabMovie() {
   }
   //   https://coolors.co/palettes/trending
   return (
-    <div className="container py-20">
+    <div className="list-movie">
+      <div className="container py-20">
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: "#fb8500",
             borderRadius: 2,
-            colorBgContainer: "#fb8500",
           },
         }}
       >
@@ -107,6 +112,7 @@ export default function TabMovie() {
           onChange={onChange}
         />
       </ConfigProvider>
+    </div>
     </div>
   );
 }

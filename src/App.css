@@ -22,3 +22,39 @@ body {
     padding-left: 20px;
     border-radius: 3px;
 }
+.list-movie {
+    max-width:100%;
+    background-Color: #000000;
+}
+.btn-theme {
+    @apply font-semibold bg-gray-200 border-gray-200 border-2 px-5 py-2 text-gray-500 rounded-xl transition-[400ms];
+}
+
+.btn-theme:hover {
+    @apply text-red-500 bg-gray-400;
+}
+
+
+.btn-theme-red:hover {
+    @apply text-red-500 bg-white;
+}
+.tableBuyTicket th,
+.tableBuyTicket td {
+    @apply py-5 border-t-2;
+}
+.gheThuong {
+    @apply bg-gray-300 h-10 w-10 leading-10 text-center rounded-md;
+}
+
+.gheVip {
+    @apply bg-orange-600 h-10 w-10 leading-10 text-center rounded-md;
+}
+.gheDaDat {
+    @apply !cursor-none !bg-gray-800 text-white h-10 w-10 leading-10 text-center rounded-md;
+}
+
+
+
+.tableBuyTicket td {
+    @apply text-right;
+}

@@ -22,7 +22,7 @@ function App() {
         <Route path='/' element={<Layout/>}>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/detail/:id' element={<Detailpage/>}/>
-          <Route path='/booking' element={<Booking/>}/>
+          <Route path='/booking/:idBooking' element={<Booking/>}/>
         </Route>
         {/* admin route */}
         <Route path="/admin" element={<AdminLayout/>}>
