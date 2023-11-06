@@ -11,12 +11,14 @@ import AdminLayout from './layout/AdminLayout';
 import Booking from './page/Booking/BookingDesktop';
 import Register from './page/Register/Register';
 import UserPage from './UserPage/UserPage';
+import Spinner from './components/Spinner/Spinner';
 
 function App() {
   return (
     <BrowserRouter>
     <Toaster position="top-center"
       reverseOrder={false}/>
+      <Spinner/>
       <Routes>
         {/* user route */}
         <Route path='/' element={<Layout/>}>

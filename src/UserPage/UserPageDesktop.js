@@ -119,7 +119,7 @@ export default function UserPageDesktop() {
                     }
                 }}
             >
-                <p>Xác nhận xóa thông tin user: {userDelete?.taiKhoan}</p>
+                <p>Xác nhận xóa thông tin user: {userDelete?.hoTen}</p>
             </Modal>
             {userDetail && (
                 <Drawer
@@ -155,7 +155,7 @@ export default function UserPageDesktop() {
                         <Form.Item label="Họ và tên" name="hoTen" initialValue={userDetail?.hoTen}>
                             <Input />
                         </Form.Item>
-                        <Form.Item label="Họ và tên" name="email" initialValue={userDetail?.email}>
+                        <Form.Item label="Email" name="email" initialValue={userDetail?.email}>
                             <Input />
                         </Form.Item>
                         <Form.Item

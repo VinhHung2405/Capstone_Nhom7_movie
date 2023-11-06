@@ -3,7 +3,7 @@ import { store } from "..";
 import { useDispatch } from "react-redux";
 import { getAccessToken } from "../utils";
 
-// import { turnOffLoadingAction, turnOnLoadingAction } from "../redux/action/spinner";
+import { turnOffLoadingAction, turnOnLoadingAction } from "../redux/action/spinner";
 
 const TOKEN_CYBERSOFT =
 "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA1NiIsIkhldEhhblN0cmluZyI6IjAzLzA0LzIwMjQiLCJIZXRIYW5UaW1lIjoiMTcxMjEwMjQwMDAwMCIsIm5iZiI6MTY4MzMwNjAwMCwiZXhwIjoxNzEyMjUwMDAwfQ.YeDhc_oSixV2XtFPDzcpxFhBos5832JpQpndHNoqZLk";
@@ -18,18 +18,28 @@ export let https= axios.create({
 
 
 //axios interceptors
-// https.interceptors.request.use(function (config) {
-//     console.log("api di")
-//     store.dispatch(turnOnLoadingAction());
-//     return config;
-//   }, function (error) {
-//     return Promise.reject(error);
-//   });
+// axios Interceptors
+https.interceptors.request.use(
+  function (config) {
+    console.log("api đi");
+    store.dispatch(turnOnLoadingAction());
 
-// https.interceptors.response.use(function (response) {
-//     console.log("api ve")
-//     store.dispatch(turnOffLoadingAction());
-//     return response;
-//   }, function (error) {
-//     return Promise.reject(error);
-//   });
+    return config;
+  },
+  function (error) {
+    store.dispatch(turnOffLoadingAction());
+    return Promise.reject(error);
+  }
+);
+
+https.interceptors.response.use(
+  function (response) {
+    console.log("api về");
+    store.dispatch(turnOffLoadingAction());
+    return response;
+  },
+  function (error) {
+    store.dispatch(turnOffLoadingAction());
+    return Promise.reject(error);
+  }
+);
