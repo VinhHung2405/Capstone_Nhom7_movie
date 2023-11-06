@@ -18,7 +18,7 @@ export default function Header() {
     if (info) {
       return (
         <div className="mr-20">
-          <span className="mr-10">{info.hoTen}</span>
+          <span className="mr-10 text-red-500 font-semibold">{info.hoTen}</span>
           <button onClick={handleLogout} className="btn-theme mr-20">
             Logout
           </button>

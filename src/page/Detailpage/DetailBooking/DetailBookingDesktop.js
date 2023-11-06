@@ -35,10 +35,10 @@ export default function BookingDetailDesktop() {
                         {heThong.cumRapChieu.map((cumRap) => {
                             return (
                                 <div key={cumRap.tenCumRap} className="mt-3">
-                                    <p className="font-semibold">
+                                    <p className="font-semibold text-yellow-500">
                                         {cumRap.tenCumRap}
                                     </p>
-                                    <p>{cumRap.diaChi}</p>
+                                    <p className="text-white">{cumRap.diaChi}</p>
                                     <div className="flex gap-3">
                                         {cumRap.lichChieuPhim
                                             .slice(0, 6)
@@ -49,7 +49,7 @@ export default function BookingDetailDesktop() {
                                                         key={
                                                             lichChieu.maLichChieu
                                                         }
-                                                        className="inline-block px-2 py-1 rounded bg-red-500 text-white max-w-[120px]"
+                                                        className="inline-block px-2 py-1 rounded bg-red-500 max-w-[120px]"
                                                     >
                                                         {moment(
                                                             lichChieu.ngayChieuGioChieu

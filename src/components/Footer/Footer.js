@@ -22,7 +22,7 @@ const Default = ({ children }) => {
 }
 export default function Footer() {
   return (
-    <div>
+    <div className='bg-footer'>
         <Desktop>
             <FooterDesktop/>
         </Desktop>

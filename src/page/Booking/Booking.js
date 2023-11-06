@@ -1,5 +1,8 @@
 import React from 'react'
 import {BookingDesktop} from "./BookingDesktop"
+import {BookingTablet} from "./BooKingTablet"
+import {BookingMobile} from "./BookingMobile"
+
 const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 992 });
     return isDesktop ? children : null;
@@ -20,10 +23,10 @@ export default function Booking() {
             <BookingDesktop/>    
         </Desktop>
         <Tablet>
-                
+            <BookingTablet/>             
         </Tablet>
         <Mobile>
-                
+             <BookingMobile/>   
         </Mobile>
     </div>
   )

@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function FooterDesktop() {
   return (
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="text-white py-8">
       <div className="container mx-auto flex justify-between items-center">
         <div className="w-1/4">
           <h3 className="text-lg font-semibold mb-2">Liên kết nhanh</h3>

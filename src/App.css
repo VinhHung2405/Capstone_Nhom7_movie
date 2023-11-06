@@ -26,6 +26,9 @@ body {
     max-width:100%;
     background-Color: #000000;
 }
+.bg-footer{
+    @apply bg-zinc-950;
+}
 .btn-theme {
     @apply font-semibold bg-gray-200 border-gray-200 border-2 px-5 py-2 text-gray-500 rounded-xl transition-[400ms];
 }

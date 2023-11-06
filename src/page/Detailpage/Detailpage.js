@@ -19,7 +19,7 @@ const Mobile = ({ children }) => {
 };
 export default function Detailpage() {
   return (
-    <div>
+    <div className='list-movie'>
       <Desktop>
         <DetailPageDestop/>
       </Desktop>
