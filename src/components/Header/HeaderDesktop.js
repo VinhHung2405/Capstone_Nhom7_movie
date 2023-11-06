@@ -62,7 +62,7 @@ export default function Header() {
     }
   }, [])
   return (
-      <Navigation className=" shadow-lg z-50" style={scrollY < 50 ? {backgroundColor: '#fff'} : {backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
+      <Navigation className=" shadow-lg z-50" style={scrollY < 50 ? {backgroundColor: '#fff'} : {backgroundColor: 'rgba(0, 0, 0, 0.8)'}}>
       <div className="container flex justify-between items-center h-20">
         <span
           className="text-5xl text-red-500 cursor-pointer font-extrabold"
