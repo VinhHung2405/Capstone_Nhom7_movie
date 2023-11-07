@@ -27,7 +27,7 @@ export default function TabMovie() {
         <TabMovieTablet/>
       </Tablet>
       <Mobile>
-        <TabMovieMobile/>
+        {/* <TabMovieMobile/> */}
       </Mobile>
     </div>
   )

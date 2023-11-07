@@ -34,7 +34,7 @@ export default function TabMovie() {
               return {
                 key: cumRap.tenCumRap,
                 label: (
-                  <div className="text-left w-96 whitespace-normal">
+                  <div className="text-left w-40 whitespace-normal">
                     <p>{cumRap.tenCumRap}</p>
                     <p>{cumRap.diaChi}</p>
                   </div>
@@ -60,7 +60,7 @@ export default function TabMovie() {
     return cumRap.danhSachPhim.map((phim) => {
       return (
         <div className="flex space-x-3 mb-2">
-          <img className="w-20 h-32 object-cover" src={phim.hinhAnh} alt=""/>
+          <img className="w-70 h-32 object-cover" src={phim.hinhAnh} alt=""/>
           <div>
             <h3 className="font-medium">{phim.tenPhim}</h3>
             <div className="grid grid-cols-3 gap-3">
@@ -68,7 +68,12 @@ export default function TabMovie() {
                 return<NavLink to={"/booking/:idBooking"}
                  className="
                 rounded bg-red-600 px-2 py-1 text-white
-                ">{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}
+                "
+                style={{
+                  backgroundColor: '#FF4B4B',
+                  color:"white"
+                }}
+                >{moment(lichChieu.ngayChieuGioChieu).format("DD/MM/YYYY - hh:mm")}
                 </NavLink>
               })}
             </div>

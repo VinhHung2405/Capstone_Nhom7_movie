@@ -28,7 +28,6 @@ export default function Intro() {
           <div
             style={{
               ...contentStyle,
-              backgroundImage: `url(${hinhAnh})`,
               width: "100%",
               height: "100vh",
             }}
@@ -39,6 +38,7 @@ export default function Intro() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
+                
               }}
             />
           </div>
@@ -53,7 +53,6 @@ export default function Intro() {
         margin: "0 auto",
         backgroundPosition: "center",
         objectFit: "cover",
-        backgroundImage: "url('./bgLoginPage1.jpg')",
         backgroundSize: "cover",
         boxShadow: " inset 0 0 0 2000px rgba(0, 0, 0, 0.7)",
       }}

@@ -22,7 +22,7 @@ export default function ListMovie() {
             return ( <Card
             hoverable
             style={{
-            width: 240,
+            width: 200,
             }}
             cover={<img  className='object-cover h-48' alt="example" src={hinhAnh} />}
         >
@@ -40,7 +40,7 @@ export default function ListMovie() {
       })
     }
   return (
-    <div className='container grid grid-cols-5 gap-10 pt-20'>
+    <div className='container grid grid-cols-2 gap-10 pt-20'>
       {renderList()}
     </div>
   )

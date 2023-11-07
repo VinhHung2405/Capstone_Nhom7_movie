@@ -20,7 +20,7 @@ const LoginPage = () => {
       //lưu thông tin vào localStorage
       localStorage.setItem("USER", JSON.stringify(res.data.content));
       toast.success("Đăng nhập thành công")
-      navigate("/admin/users");
+      navigate("/admin");
         console.log(res);
      })
      .catch((err) => {

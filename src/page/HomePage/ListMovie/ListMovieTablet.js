@@ -40,7 +40,7 @@ export default function ListMovie() {
       })
     }
   return (
-    <div className='container grid grid-cols-5 gap-10 pt-20'>
+    <div className='container grid grid-cols-3 gap-10 pt-20'>
       {renderList()}
     </div>
   )

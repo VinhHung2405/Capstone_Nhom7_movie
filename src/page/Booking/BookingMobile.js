@@ -156,7 +156,7 @@ export default function PurchaseDesktop() {
             backgroundImage: `url(${bgmovie})`,
             backgroundSize: "cover",
         }}>
-            <div className="container flex py-5 gap-5 justify-between">
+            <div className="container py-5 gap-5 inline-block">
             <div>
                 <div className="grow grid grid-cols-10 gap-5 mt-20">
                    {renderBooking()}
