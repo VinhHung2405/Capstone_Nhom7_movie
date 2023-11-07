@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Capstone_Nhom7_movie/static/css/main.7dd2ee1c.css",
+    "main.js": "/Capstone_Nhom7_movie/static/js/main.68f4d3bb.js",
+    "static/js/787.6711493f.chunk.js": "/Capstone_Nhom7_movie/static/js/787.6711493f.chunk.js",
+    "static/media/bgmovie.jpg": "/Capstone_Nhom7_movie/static/media/bgmovie.dc995cbf1629bb48572a.jpg",
+    "static/media/bg.jpg": "/Capstone_Nhom7_movie/static/media/bg.b46ef3a1ce082cecae80.jpg",
+    "static/media/logo.svg": "/Capstone_Nhom7_movie/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Capstone_Nhom7_movie/index.html",
+    "main.7dd2ee1c.css.map": "/Capstone_Nhom7_movie/static/css/main.7dd2ee1c.css.map",
+    "main.68f4d3bb.js.map": "/Capstone_Nhom7_movie/static/js/main.68f4d3bb.js.map",
+    "787.6711493f.chunk.js.map": "/Capstone_Nhom7_movie/static/js/787.6711493f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7dd2ee1c.css",
+    "static/js/main.68f4d3bb.js"
+  ]
+}
